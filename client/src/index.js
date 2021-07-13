@@ -8,14 +8,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { initMiddleware } from 'devise-axios';
 import AuthProvider from './providers/AuthProvider';
 import CheckoutProvider from './providers/CheckoutProvider';
+import LeaseProvider from './providers/LeaseProvider';
 initMiddleware();
 ReactDOM.render(
   <React.StrictMode>
     <AuthProvider>
       <CheckoutProvider>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
+        <LeaseProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </LeaseProvider>
       </CheckoutProvider>
     </AuthProvider>
   </React.StrictMode>,
